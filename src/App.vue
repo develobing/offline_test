@@ -25,23 +25,23 @@
 </template>
 
 <script>
-import Index from './components/Index'
-import TextTest from './components/TextTest'
-import ImageTest from './components/ImageTest'
-import AudioTest from './components/AudioTest'
-import Last from './components/Last'
+// import Index from './components/Index'
+// import TextTest from './components/TextTest'
+// import ImageTest from './components/ImageTest'
+// import AudioTest from './components/AudioTest'
+// import Last from './components/Last'
 import Dialog from './components/Dialog'
 
 export default {
   name: 'app',
-  components: {
-    Index,
-    TextTest,
-    ImageTest,
-    AudioTest,
-    Last,
-    Dialog
-  },
+  // components: {
+  //   Index,
+  //   TextTest,
+  //   ImageTest,
+  //   AudioTest,
+  //   Last,
+  //   Dialog
+  // },
   data: () => ({
     pages: [],
     pageIndex: 0
@@ -57,7 +57,17 @@ export default {
   },
   methods: {
     setData() {
-      this.pages = ['Index', 'TextTest', 'ImageTest', 'AudioTest', 'Last']
+      //this.pages = ['Index', 'TextTest', 'ImageTest', 'AudioTest', 'Last']
+      
+      // Lazy-Loading 컴포넌트 프리로딩 테스트
+      this.pages = [
+        () => import(`@/components/Index`),
+        () => import(`@/components/TextTest`),
+        () => import(`@/components/ImageTest`),
+        () => import(`@/components/AudioTest`),
+        () => import(`@/components/Last`)
+      ]
+
       this.pageIndex = 0
 
       // store에 Preloading 테스트 할 Contents 추가
