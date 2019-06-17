@@ -17,6 +17,10 @@
     <!-- Offline Test Component -->
     <component :is="page"></component>
     <!-- Offline Test Component -->
+
+    <!-- Utility Components -->
+    <Dialog></Dialog>
+    <!-- Utility Components -->
   </div>
 </template>
 
@@ -26,6 +30,7 @@ import TextTest from './components/TextTest'
 import ImageTest from './components/ImageTest'
 import AudioTest from './components/AudioTest'
 import Last from './components/Last'
+import Dialog from './components/Dialog'
 
 export default {
   name: 'app',
@@ -34,7 +39,8 @@ export default {
     TextTest,
     ImageTest,
     AudioTest,
-    Last
+    Last,
+    Dialog
   },
   data: () => ({
     pages: [],
@@ -46,12 +52,10 @@ export default {
     }
   },
   created() {
-    this.init()
+    this.setData()
+    this.setOffline()
   },
   methods: {
-    init() {
-      this.setData()
-    },
     setData() {
       this.pages = ['Index', 'TextTest', 'ImageTest', 'AudioTest', 'Last']
       this.pageIndex = 0
@@ -61,6 +65,13 @@ export default {
       let audios = typeof AUDIOS !== 'undefined' ? AUDIOS : []
       this.$store.commit('setImages', images)
       this.$store.commit('setAudios', audios)
+    },
+    setOffline() {
+      let msg = '오프라인이 되었습니다.<br><br>크롬의 캐시 사용 설정이 되어있지 않으면 학습이 진행되지 않습니다.'
+      
+      window.addEventListener('offline', () => {
+        this.$store.dispatch('showDialog', msg)
+      })
     },
     prev() {
       console.log('prev')

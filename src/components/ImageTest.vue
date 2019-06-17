@@ -23,6 +23,10 @@ export default {
       this.images.forEach(image => {
         let imageTag = document.createElement('img')
         imageTag.src = image
+        imageTag.onerror = () => {
+          console.log('imageTag - onerror')
+          this.$store.dispatch('showOfflineError')
+        }
         imageWrap.appendChild(imageTag)
       })
     }
