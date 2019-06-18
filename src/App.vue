@@ -29,6 +29,7 @@
 // import TextTest from './components/TextTest'
 // import ImageTest from './components/ImageTest'
 // import AudioTest from './components/AudioTest'
+// import CssTest from './components/CssTest'
 // import Last from './components/Last'
 import Dialog from './components/Dialog'
 
@@ -39,6 +40,7 @@ export default {
   //   TextTest,
   //   ImageTest,
   //   AudioTest,
+  //   CssTest,
   //   Last,
   //   Dialog
   // },
@@ -57,7 +59,7 @@ export default {
   },
   methods: {
     setData() {
-      //this.pages = ['Index', 'TextTest', 'ImageTest', 'AudioTest', 'Last']
+      //this.pages = ['Index', 'TextTest', 'ImageTest', 'AudioTest', 'CssTest', 'Last']
       
       // Lazy-Loading 컴포넌트 프리로딩 테스트
       this.pages = [
@@ -65,6 +67,7 @@ export default {
         () => import(`@/components/TextTest`),
         () => import(`@/components/ImageTest`),
         () => import(`@/components/AudioTest`),
+        () => import(`@/components/CssTest`),
         () => import(`@/components/Last`)
       ]
 
