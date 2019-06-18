@@ -30,19 +30,4 @@ export default {
 <style scoped>
 @import url('../assets/css/css_test.css');
 
-.css_test01 {
-  width: 100%;;
-  height: 200px;
-  color: lightgray;
-  background-image: url('https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-  background-position: center;
-}
-
-.css_test02 {
-  width: 100%;;
-  height: 200px;
-  color: lightgray;
-  background-image: url('../assets/img/img01.jpg');
-  background-position: center;
-}
 </style>

@@ -4,6 +4,7 @@
     <p>안녕하세요?<br><br>오프라인 학습 테스트의<br>첫 페이지입니다.</p><br>
     <v-btn @click="preloadImage">이미지 프리로딩 하기</v-btn><br>
     <v-btn @click="preloadAudio">오디오 프리로딩 하기</v-btn><br>
+    <v-btn @click="preloadCss">CSS 컨텐츠 프리로딩 하기</v-btn><br>
   </div>
 </template>
 
@@ -16,6 +17,9 @@ export default {
     },
     audios() {
       return this.$store.getters.getAudios
+    },
+    cssContents() {
+      return this.$store.getters.getCssContents
     }
   },
   methods:{
@@ -35,6 +39,15 @@ export default {
       this.audios.forEach(audio => {
         let preloadObj = new Audio()
         preloadObj.src = audio
+      })
+    },
+    preloadCss() {
+      console.log('preloadCss run!')
+      console.log('Preload Target CSS Contents : ', this.cssContents)
+
+      this.cssContents.forEach(content => {
+        let preloadObj = new Image()
+        preloadObj.src = content
       })
     }
   }

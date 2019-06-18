@@ -13,7 +13,8 @@ export default new Vuex.Store({
       callback: null
     },
     images: [],
-    audios: []
+    audios: [],
+    cssContents: []
   },
   mutations: {
     setDialog(state, payload) {
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     },
     setAudios(state, payload) {
       state.audios = payload
+    },
+    setCssContents(state, payload) {
+      state.cssContents = payload
     }
   },
   actions: {
@@ -60,6 +64,9 @@ export default new Vuex.Store({
     },
     getAudios(state) {
       return state.audios
+    },
+    getCssContents(state) {
+      return state.cssContents
     }
   }
 })

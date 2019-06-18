@@ -26,3 +26,10 @@ let AUDIOS = [
   "https://ilcontents.chungdahm.com/LCMSFiles/Packing_org/SVC001/TRK507/1267/C1MT/SVC001_1267_C1MT_14595/TA_IL_C1_Tera_LF_L05_SR-09.mp3",
   "https://ilcontents.chungdahm.com/LCMSFiles/Packing_org/SVC001/TRK507/1267/C1MT/SVC001_1267_C1MT_14595/TA_IL_C1_Tera_LF_L05_SR-10.mp3"
 ]
+
+// CSS 내부에 미리 로딩해야하는 컨텐츠들
+let CSS_CONTENTS = [
+  "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg",
+  "http://localhost:8080/img/img01.jpg",
+  "http://localhost:8080/img/img02.jpg"
+]
