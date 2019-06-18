@@ -2,12 +2,11 @@
   <div id="app">
     <!-- Navigation -->
     <v-toolbar color="primary" class="mb-3">
-      <v-toolbar-side-icon class="hidden-sm-and-up"></v-toolbar-side-icon>
       <v-toolbar-title>
         Offline Test
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only">
+      <v-toolbar-items>
         <v-btn @click="prev">이전 페이지</v-btn>
         <v-btn @click="next">다음 페이지</v-btn>
       </v-toolbar-items>
