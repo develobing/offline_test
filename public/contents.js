@@ -27,6 +27,11 @@ let AUDIOS = [
   "https://ilcontents.chungdahm.com/LCMSFiles/Packing_org/SVC001/TRK507/1267/C1MT/SVC001_1267_C1MT_14595/TA_IL_C1_Tera_LF_L05_SR-10.mp3"
 ]
 
+let VIDEOS = [
+  "https://www.w3schools.com/tags/mov_bbb.mp4",
+  "https://www.w3schools.com/jsref/movie.mp4"
+]
+
 // CSS 내부에 미리 로딩해야하는 컨텐츠들
 let CSS_CONTENTS = [
   "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg",

@@ -28,6 +28,7 @@
 // import TextTest from './components/TextTest'
 // import ImageTest from './components/ImageTest'
 // import AudioTest from './components/AudioTest'
+// import VideoTest from './components/VideoTest'
 // import CssTest from './components/CssTest'
 // import Last from './components/Last'
 import Dialog from './components/Dialog'
@@ -39,6 +40,7 @@ export default {
   //   TextTest,
   //   ImageTest,
   //   AudioTest,
+  //   VideoTest,
   //   CssTest,
   //   Last,
     Dialog
@@ -58,7 +60,7 @@ export default {
   },
   methods: {
     setData() {
-      //this.pages = ['Index', 'TextTest', 'ImageTest', 'AudioTest', 'CssTest', 'Last']
+      //this.pages = ['Index', 'TextTest', 'ImageTest', 'AudioTest', 'VideoTest', 'CssTest', 'Last']
       
       // Lazy-Loading 컴포넌트 프리로딩 테스트
       this.pages = [
@@ -66,6 +68,7 @@ export default {
         () => import(`@/components/TextTest`),
         () => import(`@/components/ImageTest`),
         () => import(`@/components/AudioTest`),
+        () => import(`@/components/VideoTest`),
         () => import(`@/components/CssTest`),
         () => import(`@/components/Last`)
       ]
@@ -75,9 +78,11 @@ export default {
       // store에 Preloading 테스트 할 Contents 추가
       let images = typeof IMAGES !== 'undefined' ? IMAGES : []
       let audios = typeof AUDIOS !== 'undefined' ? AUDIOS : []
+      let videos = typeof VIDEOS !== 'undefined' ? VIDEOS : []
       let cssContents = typeof CSS_CONTENTS !== 'undefined' ? CSS_CONTENTS : []
       this.$store.commit('setImages', images)
       this.$store.commit('setAudios', audios)
+      this.$store.commit('setVideos', videos)
       this.$store.commit('setCssContents', cssContents)
     },
     setOffline() {

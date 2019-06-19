@@ -14,6 +14,7 @@ export default new Vuex.Store({
     },
     images: [],
     audios: [],
+    videos: [],
     cssContents: []
   },
   mutations: {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     },
     setAudios(state, payload) {
       state.audios = payload
+    },
+    setVideos(state, payload) {
+      state.videos = payload
     },
     setCssContents(state, payload) {
       state.cssContents = payload
@@ -64,6 +68,9 @@ export default new Vuex.Store({
     },
     getAudios(state) {
       return state.audios
+    },
+    getVideos(state) {
+      return state.videos
     },
     getCssContents(state) {
       return state.cssContents
