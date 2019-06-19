@@ -116,6 +116,12 @@ img {
   height: 300px;
 }
 
+input {
+  width: 80%;
+  margin-bottom: 5px;
+  border: 2px solid #429e87;
+}
+
 textarea {
   width: 80%;
   height: 300px;
