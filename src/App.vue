@@ -121,6 +121,10 @@ img {
   height: 300px;
 }
 
+video {
+  height: 300px;
+}
+
 input {
   width: 80%;
   margin-bottom: 5px;

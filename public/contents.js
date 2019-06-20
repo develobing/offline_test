@@ -29,7 +29,9 @@ let AUDIOS = [
 
 let VIDEOS = [
   "https://www.w3schools.com/tags/mov_bbb.mp4",
-  "https://www.w3schools.com/jsref/movie.mp4"
+  "https://www.w3schools.com/jsref/movie.mp4",
+  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
 ]
 
 // CSS 내부에 미리 로딩해야하는 컨텐츠들
