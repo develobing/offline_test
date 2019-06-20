@@ -49,10 +49,19 @@ export default {
       console.log('preloadVideo run!')
       console.log('Preload Target Videos : ', this.videos)
 
-      this.videos.forEach(video => {
-        let preloadObj = document.createElement("video")
-        preloadObj.preload = "auto"
-        preloadObj.src = video
+      this.videos.forEach((video, index) => {
+        // Video Offline용 Blob 변환
+        fetch(video)
+        .then(res => {
+          console.log('video - res : ', res)
+          res.blob()
+          .then(blob => {
+            let newVideos = this.videos
+            newVideos[index] = blob
+            console.log('newVideos : ', newVideos)
+            this.$store.commit('setVideos', newVideos)
+          })
+        })
       })
     },
     preloadCss() {

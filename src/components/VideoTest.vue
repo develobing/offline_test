@@ -23,7 +23,14 @@ export default {
       this.videos.forEach(video => {
         let videoTag = document.createElement('video')
         let brTag = document.createElement('br')
-        videoTag.src = video
+
+        // Blob 으로 변환된 동영상 재생
+        if(typeof video === 'object') {
+          videoTag.src = window.URL.createObjectURL(video)
+        } else {
+          videoTag.src = video
+        }
+
         videoTag.controls = true
         videoTag.onerror = () => {
           console.log('videoTag - onerror')
