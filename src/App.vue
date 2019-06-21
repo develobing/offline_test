@@ -55,6 +55,7 @@ export default {
   created() {
     this.setData()
     this.setOffline()
+    this.setOnline()
   },
   methods: {
     setData() {
@@ -66,6 +67,7 @@ export default {
         () => import(`@/components/TextTest`),
         () => import(`@/components/ImageTest`),
         () => import(`@/components/AudioTest`),
+        () => import('@/components/VideoTest'),
         () => import(`@/components/CssTest`),
         () => import(`@/components/Last`)
       ]
@@ -76,14 +78,23 @@ export default {
       let images = typeof IMAGES !== 'undefined' ? IMAGES : []
       let audios = typeof AUDIOS !== 'undefined' ? AUDIOS : []
       let cssContents = typeof CSS_CONTENTS !== 'undefined' ? CSS_CONTENTS : []
+      let videos = typeof VIDEOS !== 'undefined' ? VIDEOS : []
       this.$store.commit('setImages', images)
       this.$store.commit('setAudios', audios)
       this.$store.commit('setCssContents', cssContents)
+      this.$store.commit('setVideos',videos)
     },
     setOffline() {
       let msg = '오프라인이 되었습니다.<br><br>크롬의 캐시 사용 설정이 되어있지 않으면 학습이 진행되지 않습니다.'
       
       window.addEventListener('offline', () => {
+        this.$store.dispatch('showDialog', msg)
+      })
+    },
+    setOnline(){
+      let msg = '네트워크가 다시 연결되었습니다.'
+
+      window.addEventListener('online', () => {
         this.$store.dispatch('showDialog', msg)
       })
     },

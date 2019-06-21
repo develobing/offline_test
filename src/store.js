@@ -14,7 +14,9 @@ export default new Vuex.Store({
     },
     images: [],
     audios: [],
-    cssContents: []
+    cssContents: [],
+    videos: [],
+    videoBlobs : []
   },
   mutations: {
     setDialog(state, payload) {
@@ -28,6 +30,12 @@ export default new Vuex.Store({
     },
     setCssContents(state, payload) {
       state.cssContents = payload
+    },
+    setVideos(state, payload) {
+      state.videos = payload
+    },
+    setVideoBlobs(state, payload) {
+      state.videoBlobs = payload
     }
   },
   actions: {
@@ -67,6 +75,12 @@ export default new Vuex.Store({
     },
     getCssContents(state) {
       return state.cssContents
+    },
+    getVideos(state) {
+      return state.videos
+    },
+    getVideoBlobs(state){
+      return state.videoBlobs
     }
   }
 })
